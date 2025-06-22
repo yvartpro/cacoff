@@ -119,6 +119,59 @@
     // Initial call to trigger animation
     goToSlide(0);
   });
+
+  // ...existing code...
+document.body.addEventListener('htmx:afterSwap', () => {
+  const slides = document.getElementById('slides');
+  const total = 3;
+  let current = 0;
+
+  const indicators = document.querySelectorAll('#carousel-indicators button');
+
+  const goToSlide = (index) => {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    current = index;
+
+    // Update indicators
+    indicators.forEach((btn, i) => {
+      btn.classList.toggle('bg-white/70', i === index);
+      btn.classList.toggle('bg-white/40', i !== index);
+    });
+
+    // Reset animations
+    const currentSlide = slides.children[index];
+    const animatedElements = currentSlide.querySelectorAll('.animate-fade-in-up');
+    animatedElements.forEach(el => {
+      el.classList.remove('animate-fade-in-up');
+      void el.offsetWidth;
+      setTimeout(() => {
+        el.classList.add('animate-fade-in-up');
+      }, 20);
+    });
+  };
+
+  document.getElementById('prevSlide')?.addEventListener('click', () => {
+    const nextIndex = (current - 1 + total) % total;
+    goToSlide(nextIndex);
+  });
+
+  document.getElementById('nextSlide')?.addEventListener('click', () => {
+    const nextIndex = (current + 1) % total;
+    goToSlide(nextIndex);
+  });
+
+  indicators.forEach((btn, i) => {
+    btn.onclick = () => goToSlide(i);
+  });
+
+  setInterval(() => {
+    const nextIndex = (current + 1) % total;
+    goToSlide(nextIndex);
+  }, 8000);
+
+  goToSlide(0);
+});
+// ...existing code...
 </script>
 
 </body>
