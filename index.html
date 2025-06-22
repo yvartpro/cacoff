@@ -6,28 +6,32 @@
   <title>CACOFF - Cabinet de Conseil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- ...tailwind cinfigurations... -->
+    <script>
+    tailwind.config = {
+        theme: {
+        extend: {
+            colors: {
+            primary: { DEFAULT: '#22c55e', light: '#bbf7d0', dark: '#166534', },
+            gray: { 900: '#18181b', 700: '#374151', 100: '#f3f4f6', },
+            },
+            fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            },
+        }
+        }
+    }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="text-gray-800">
 
-  <!-- Header -->
   <div id="header" hx-get="components/header.html" hx-trigger="load"></div>
-
-  <!-- Bannière principale -->
   <div hx-get="components/banner.html" hx-trigger="load"></div>
-
-  <!-- À propos -->
   <div hx-get="components/about.html" hx-trigger="load"></div>
-
-  <!-- Services -->
   <div hx-get="components/services.html" hx-trigger="load"></div>
-
-  <!-- Valeurs / engagements -->
   <div hx-get="components/values.html" hx-trigger="load"></div>
-
-  <!-- Call to action / contact rapide -->
-  <div hx-get="components/cta.html" hx-trigger="load"></div>
-
-  <!-- Footer -->
   <div hx-get="components/footer.html" hx-trigger="load"></div>
 
   <!-- JS pour offcanvas menu -->
@@ -46,38 +50,39 @@
       };
     });
   </script>
+    <!-- ........JS for Offcanvas open & close.......  -->
+    <script>
+    document.body.addEventListener('htmx:afterSwap', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuPanel = document.getElementById('mobile-menu-panel');
 
-<script>
-  document.body.addEventListener('htmx:afterSwap', () => {
-    const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuPanel = document.getElementById('mobile-menu-panel');
+        if (!menuBtn || !closeBtn || !mobileMenu || !menuPanel) return;
 
-    if (!menuBtn || !closeBtn || !mobileMenu || !menuPanel) return;
+        menuBtn.onclick = () => {
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+            menuPanel.classList.remove('-translate-x-full');
+            menuPanel.classList.add('translate-x-0');
+        }, 10);
+        }; 
 
-    menuBtn.onclick = () => {
-      mobileMenu.classList.remove('hidden');
-      setTimeout(() => {
-        menuPanel.classList.remove('-translate-x-full');
-        menuPanel.classList.add('translate-x-0');
-      }, 10); // for transition to trigger
-    }; 
+        const closeMenu = () => {
+        menuPanel.classList.remove('translate-x-0');
+        menuPanel.classList.add('-translate-x-full');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+        }, 300);
+        };
 
-    const closeMenu = () => {
-      menuPanel.classList.remove('translate-x-0');
-      menuPanel.classList.add('-translate-x-full');
-      setTimeout(() => {
-        mobileMenu.classList.add('hidden');
-      }, 300); // wait for transition
-    };
-
-    closeBtn.onclick = closeMenu;
-    mobileMenu.onclick = (e) => {
-      if (e.target === mobileMenu) closeMenu();
-    };
-  });
-</script>
+        closeBtn.onclick = closeMenu;
+        mobileMenu.onclick = (e) => {
+        if (e.target === mobileMenu) closeMenu();
+        };
+    });
+    </script>
+    <!-- ..js for banner... -->
 <script>
   document.body.addEventListener('htmx:afterSwap', () => {
     const slides = document.getElementById('slides');
@@ -88,12 +93,10 @@
       slides.style.transform = `translateX(-${index * 100}%)`;
       current = index;
 
-      // Reset animations
       const currentSlide = slides.children[index];
       const animatedElements = currentSlide.querySelectorAll('.animate-fade-in-up');
       animatedElements.forEach(el => {
         el.classList.remove('animate-fade-in-up');
-        // Force reflow to restart animation
         void el.offsetWidth;
         setTimeout(() => {
           el.classList.add('animate-fade-in-up');
@@ -116,11 +119,9 @@
       goToSlide(nextIndex);
     }, 8000);
 
-    // Initial call to trigger animation
     goToSlide(0);
   });
 
-  // ...existing code...
 document.body.addEventListener('htmx:afterSwap', () => {
   const slides = document.getElementById('slides');
   const total = 3;
@@ -132,13 +133,11 @@ document.body.addEventListener('htmx:afterSwap', () => {
     slides.style.transform = `translateX(-${index * 100}%)`;
     current = index;
 
-    // Update indicators
     indicators.forEach((btn, i) => {
       btn.classList.toggle('bg-white/70', i === index);
       btn.classList.toggle('bg-white/40', i !== index);
     });
 
-    // Reset animations
     const currentSlide = slides.children[index];
     const animatedElements = currentSlide.querySelectorAll('.animate-fade-in-up');
     animatedElements.forEach(el => {
@@ -171,8 +170,14 @@ document.body.addEventListener('htmx:afterSwap', () => {
 
   goToSlide(0);
 });
-// ...existing code...
 </script>
-
+<!-- ...AOS ... -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true 
+  });
+</script>
 </body>
 </html>
