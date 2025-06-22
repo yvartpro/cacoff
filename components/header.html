@@ -1,0 +1,57 @@
+<!-- components/header.html -->
+<header class="bg-white shadow-md fixed top-0 w-full z-50">
+  <!-- Topbar -->
+  <div class="hidden md:flex bg-gray-100 text-sm text-gray-600 px-4 py-2 flex flex-col md:flex-row justify-between items-center">
+    <div>📞 +257 69 320 954 / 79 019 059</div>
+    <div>📧 cacoffcacoff@gmail.com</div>
+  </div>
+
+  <!-- Main header -->
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <!-- Logo -->
+    <a href="/index.html" class="flex items-center space-x-3">
+      <img src="/assets/images/logo.png" alt="CACOFF Logo" class="w-10 h-10">
+      <span class="text-2xl font-bold text-green-600">CACOFF</span>
+    </a>
+
+    <!-- Desktop menu -->
+    <nav class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+      <a href="/index.html" class="hover:text-green-700">Accueil</a>
+      <a href="/about.html" class="hover:text-green-700">À propos</a>
+      <a href="/services.html" class="hover:text-green-700">Services</a>
+      <a href="/contract.html" class="hover:text-green-700">Contrat</a>
+      <a href="/contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden text-gray-700 z-50">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Slide-in mobile menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-40 hidden">
+    <div
+      class="bg-white w-64 h-full p-6 space-y-4 transform -translate-x-full transition-transform duration-300 ease-in-out"
+      id="mobile-menu-panel">
+      <!-- Close button -->
+      <button id="close-menu" class="text-gray-800 mb-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <nav class="flex flex-col space-y-4 text-gray-700 font-semibold">
+        <a href="/index.html">Accueil</a>
+        <a href="/about.html">À propos</a>
+        <a href="/services.html">Services</a>
+        <a href="/contract.html">Contrat</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+

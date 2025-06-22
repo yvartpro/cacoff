@@ -1,0 +1,101 @@
+<!-- components/banner.html -->
+<section class="relative w-full h-screen min-h-[500px] overflow-hidden" id="banner-carousel">
+  <!-- Slides wrapper -->
+  <div class="flex transition-transform duration-1000 ease-in-out h-full" id="slides" style="width: 300%">
+    
+    <!-- Slide 1 -->
+    <div class="relative w-full h-full flex-shrink-0">
+      <img src="/assets/images/banner_1.jpg" alt="Slide 1"
+        class="absolute inset-0 w-full h-full object-cover z-0" />
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <div class="relative z-20 flex flex-col justify-center items-center text-center h-full px-4 sm:px-8">
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-2xl leading-tight animate-fade-in-up">
+          Experts en Audit et Comptabilité
+        </h1>
+        <p class="text-white mt-4 max-w-xl text-base sm:text-lg animate-fade-in-up delay-200">
+          Votre croissance commence par une gestion saine.
+        </p>
+        <a href="/about.html"
+          class="mt-6 px-6 py-3 bg-green-600 text-white rounded shadow hover:bg-green-700 transition animate-fade-in-up delay-300">
+          En savoir plus
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="relative w-full h-full flex-shrink-0">
+      <img src="/assets/images/banner_2.webp" alt="Slide 2"
+        class="absolute inset-0 w-full h-full object-cover z-0" />
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <div class="relative z-20 flex flex-col justify-center items-center text-center h-full px-4 sm:px-8">
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-2xl leading-tight animate-fade-in-up">
+          Conseil Fiscal sur mesure
+        </h1>
+        <p class="text-white mt-4 max-w-xl text-base sm:text-lg animate-fade-in-up delay-200">
+          Nous optimisons votre fiscalité dans le respect de la loi.
+        </p>
+        <a href="/services.html"
+          class="mt-6 px-6 py-3 bg-green-600 text-white rounded shadow hover:bg-green-700 transition animate-fade-in-up delay-300">
+          Nos services
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="relative w-full h-full flex-shrink-0">
+      <img src="/assets/images/banner_3.jpg" alt="Slide 3"
+        class="absolute inset-0 w-full h-full object-cover z-0" />
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <div class="relative z-20 flex flex-col justify-center items-center text-center h-full px-4 sm:px-8">
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-2xl leading-tight animate-fade-in-up">
+          Accompagnement stratégique
+        </h1>
+        <p class="text-white mt-4 max-w-xl text-base sm:text-lg animate-fade-in-up delay-200">
+          Nous vous aidons à structurer votre avenir.
+        </p>
+        <a href="/contact.html"
+          class="mt-6 px-6 py-3 bg-green-600 text-white rounded shadow hover:bg-green-700 transition animate-fade-in-up delay-300">
+          Contactez-nous
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <button id="prevSlide"
+    class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-30 hover:text-green-500">
+    &#10094;
+  </button>
+  <button id="nextSlide"
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-30 hover:text-green-500">
+    &#10095;
+  </button>
+</section>
+
+
+<!-- Tailwind animations (injected manually) -->
+<style>
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out both;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+

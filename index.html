@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CACOFF - Cabinet de Conseil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</head>
+<body class="text-gray-800">
+
+  <!-- Header -->
+  <div id="header" hx-get="components/header.html" hx-trigger="load"></div>
+
+  <!-- Bannière principale -->
+  <div hx-get="components/banner.html" hx-trigger="load"></div>
+
+  <!-- À propos -->
+  <div hx-get="components/about.html" hx-trigger="load"></div>
+
+  <!-- Services -->
+  <div hx-get="components/services.html" hx-trigger="load"></div>
+
+  <!-- Valeurs / engagements -->
+  <div hx-get="components/values.html" hx-trigger="load"></div>
+
+  <!-- Call to action / contact rapide -->
+  <div hx-get="components/cta.html" hx-trigger="load"></div>
+
+  <!-- Footer -->
+  <div hx-get="components/footer.html" hx-trigger="load"></div>
+
+  <!-- JS pour offcanvas menu -->
+  <script>
+    document.body.addEventListener('htmx:afterSwap', function () {
+      const menuBtn = document.getElementById('menu-btn');
+      const closeBtn = document.getElementById('close-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !closeBtn || !mobileMenu) return;
+
+      menuBtn.onclick = () => mobileMenu.classList.remove('hidden');
+      closeBtn.onclick = () => mobileMenu.classList.add('hidden');
+      mobileMenu.onclick = (e) => {
+        if (e.target === mobileMenu) mobileMenu.classList.add('hidden');
+      };
+    });
+  </script>
+
+<script>
+  document.body.addEventListener('htmx:afterSwap', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuPanel = document.getElementById('mobile-menu-panel');
+
+    if (!menuBtn || !closeBtn || !mobileMenu || !menuPanel) return;
+
+    menuBtn.onclick = () => {
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        menuPanel.classList.remove('-translate-x-full');
+        menuPanel.classList.add('translate-x-0');
+      }, 10); // for transition to trigger
+    }; 
+
+    const closeMenu = () => {
+      menuPanel.classList.remove('translate-x-0');
+      menuPanel.classList.add('-translate-x-full');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 300); // wait for transition
+    };
+
+    closeBtn.onclick = closeMenu;
+    mobileMenu.onclick = (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    };
+  });
+</script>
+<script>
+  document.body.addEventListener('htmx:afterSwap', () => {
+    const slides = document.getElementById('slides');
+    const total = 3;
+    let current = 0;
+
+    const goToSlide = (index) => {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      current = index;
+
+      // Reset animations
+      const currentSlide = slides.children[index];
+      const animatedElements = currentSlide.querySelectorAll('.animate-fade-in-up');
+      animatedElements.forEach(el => {
+        el.classList.remove('animate-fade-in-up');
+        // Force reflow to restart animation
+        void el.offsetWidth;
+        setTimeout(() => {
+          el.classList.add('animate-fade-in-up');
+        }, 20);
+      });
+    };
+
+    document.getElementById('prevSlide').onclick = () => {
+      const nextIndex = (current - 1 + total) % total;
+      goToSlide(nextIndex);
+    };
+
+    document.getElementById('nextSlide').onclick = () => {
+      const nextIndex = (current + 1) % total;
+      goToSlide(nextIndex);
+    };
+
+    setInterval(() => {
+      const nextIndex = (current + 1) % total;
+      goToSlide(nextIndex);
+    }, 8000);
+
+    // Initial call to trigger animation
+    goToSlide(0);
+  });
+</script>
+
+</body>
+</html>
