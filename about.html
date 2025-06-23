@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>À propos | CACOFF SPRL</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Palette et police personnalisées -->
   <script>
     tailwind.config = {
       theme: {
@@ -27,71 +26,112 @@
   <div id="header" hx-get="components/header.html" hx-trigger="load"></div>
 
   <main>
-    <section class="relative py-16 bg-green-50 overflow-hidden">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-primary-light via-white to-white overflow-hidden">
+      <!-- Decorative polygons -->
+      <svg class="absolute -top-10 -left-20 w-72 h-72 opacity-20 z-0" viewBox="0 0 200 200" fill="none">
+        <polygon points="100,10 190,60 160,190 40,190 10,60" fill="#bbf7d0"/>
+      </svg>
+      <svg class="absolute top-10 right-0 w-40 h-40 opacity-10 z-0" viewBox="0 0 100 100" fill="none">
+        <polygon points="50,0 100,25 80,100 20,100 0,25" fill="#4ade80"/>
+      </svg>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
+        <h1 class="text-2xl md:text-4xl text-primary-dark mb-4" data-aos="fade-down">À propos de CACOFF SPRL</h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="100">
+          Cabinet d’Audit, Comptabilité, Fiscalité et de Formation, au service des entreprises et organisations du Burundi.
+        </p>
+        <img src="/assets/images/banner_3.jpg" alt="Équipe CACOFF"
+          class="mx-auto rounded-xl shadow-lg w-full max-w-md object-cover object-center h-56 md:h-80 bg-gray-200 border-4 border-green-100"
+          data-aos="zoom-in" data-aos-delay="200" />
+      </div>
+    </section>
+
+    <!-- Animated Cards Section -->
+    <section class="relative py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 md:px-8">
+        <div class="mb-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-2" data-aos="fade-up">Notre ADN</h2>
+          <p class="text-gray-700 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+            Une équipe engagée, des valeurs fortes, une expertise reconnue.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-primary-light rounded-xl shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="0">
+            <svg class="w-12 h-12 text-primary mb-4" fill="none" viewBox="0 0 48 48">
+              <rect x="10" y="18" width="28" height="18" rx="3" fill="#22c55e"/>
+              <rect x="18" y="26" width="4" height="10" fill="#166534"/>
+              <rect x="26" y="26" width="4" height="10" fill="#166534"/>
+            </svg>
+            <h3 class="font-semibold text-primary-dark mb-2">Notre histoire</h3>
+            <p class="text-gray-700">
+              Fondé à Bujumbura, CACOFF SPRL accompagne depuis 2024 les entreprises burundaises dans leur développement, leur conformité et leur croissance.
+            </p>
+          </div>
+          <div class="bg-primary-light rounded-xl shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <svg class="w-12 h-12 text-primary mb-4" fill="none" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="20" fill="#bbf7d0"/>
+              <path d="M16 28c0-4 8-4 8-8s-8-4-8-8" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="3" fill="#22c55e"/>
+            </svg>
+            <h3 class="font-semibold text-primary-dark mb-2">Notre mission</h3>
+            <p class="text-gray-700">
+              Offrir une assistance comptable, fiscale et stratégique sur mesure, dans le respect des normes et avec une approche humaine.
+            </p>
+          </div>
+          <div class="bg-primary-light rounded-xl shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+            <svg class="w-12 h-12 text-primary mb-4" fill="none" viewBox="0 0 48 48">
+              <ellipse cx="24" cy="32" rx="16" ry="8" fill="#bbf7d0"/>
+              <circle cx="24" cy="20" r="6" fill="#22c55e"/>
+            </svg>
+            <h3 class="font-semibold text-primary-dark mb-2">Nos valeurs</h3>
+            <p class="text-gray-700">
+              Intégrité, confidentialité, qualité et proximité guident chacune de nos interventions et relations clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fun Facts / Key Numbers Section -->
+    <section class="relative py-16 bg-gradient-to-br from-primary-light via-white to-white">
+      <div class="max-w-4xl mx-auto px-4 md:px-8">
         <div class="mb-10 text-center">
-          <h1 class="text-3xl md:text-5xl font-bold text-primary-dark mb-4" data-aos="fade-up">À propos de CACOFF SPRL</h1>
-          <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            Cabinet d’Audit, Comptabilité, Fiscalité et de Formation, au service des entreprises et organisations du Burundi.
-          </p>
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-2" data-aos="fade-up">Chiffres clés</h2>
         </div>
-        <div class="bg-white/90 rounded-xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center backdrop-blur-sm border border-green-100" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex-1">
-            <h2 class="text-2xl font-semibold text-primary-dark mb-3">Notre Histoire</h2>
-            <p class="text-gray-700 mb-4">
-              CACOFF SPRL (Cabinet d’Audit, Comptabilité, Fiscalité et de Formation) est né de la volonté de professionnels expérimentés d’accompagner les entreprises burundaises dans leur développement et leur conformité. Depuis sa création à Bujumbura, le cabinet s’est imposé comme un partenaire de confiance pour les sociétés, institutions et entrepreneurs souhaitant sécuriser leur gestion comptable et fiscale.
-            </p>
-            <p class="text-gray-700 mb-4">
-              Notre équipe, dirigée par NIBARUTA Moise, s’appuie sur une expertise reconnue et une connaissance approfondie du tissu économique local. Nous intervenons sur tout le territoire du Burundi, auprès de clients de toutes tailles et de tous secteurs.
-            </p>
-            <h3 class="text-xl font-semibold text-primary mb-2">Nos Missions</h3>
-            <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
-              <li>Assistance comptable et fiscale sur mesure</li>
-              <li>Déclarations fiscales et sociales (OBR, TVA, L.IRE, etc.)</li>
-              <li>Création d’entreprises et accompagnement administratif</li>
-              <li>Audit financier et organisationnel</li>
-              <li>Formations professionnelles (Excel, gestion, fiscalité…)</li>
-              <li>Conseil stratégique et accompagnement à la croissance</li>
-            </ul>
-            <h3 class="text-xl font-semibold text-primary mb-2">Nos Valeurs</h3>
-            <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
-              <li><b>Intégrité & Confidentialité :</b> Respect absolu du secret professionnel et des normes déontologiques.</li>
-              <li><b>Qualité & Rigueur :</b> Des prestations réalisées selon les règles de l’art et la législation en vigueur.</li>
-              <li><b>Proximité & Disponibilité :</b> Un accompagnement personnalisé et réactif pour chaque client.</li>
-            </ul>
-            <h3 class="text-xl font-semibold text-primary mb-2">Notre Engagement</h3>
-            <p class="text-gray-700 mb-4">
-              CACOFF SPRL s’engage à fournir un service fiable, transparent et adapté à chaque situation. Notre mandat d’assistance est annuel, renouvelable, et garantit un accompagnement continu, la confidentialité et la qualité de service. Les honoraires sont fixés à 3 600 000 FBU par an, payables mensuellement.
-            </p>
-            <h3 class="text-xl font-semibold text-primary mb-2">Chiffres clés</h3>
-            <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
-              <li>+10 ans d’expérience cumulée</li>
-              <li>Plus de 100 entreprises accompagnées</li>
-              <li>Présence sur tout le territoire burundais</li>
-            </ul>
-            <div class="mt-6">
-              <a href="/contact.html" class="inline-block px-6 py-3 bg-primary text-white rounded shadow hover:bg-primary-dark transition font-medium">
-                Nous contacter
-              </a>
-            </div>
+        <div class="flex flex-wrap justify-center gap-8 text-center">
+          <div class="flex flex-col items-center" data-aos="zoom-in">
+            <span class="text-4xl font-bold text-primary-dark">+10</span>
+            <span class="text-gray-700">ans d’expérience</span>
           </div>
-          <div class="flex-1 flex items-center justify-center">
-            <img src="/assets/images/about_cacoff.jpg" alt="Équipe CACOFF"
-              class="rounded-lg shadow-lg w-full max-w-xs md:max-w-sm object-cover object-center h-56 md:h-80 bg-gray-200 border-4 border-green-100" data-aos="zoom-in" data-aos-delay="300" />
+          <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+            <span class="text-4xl font-bold text-primary-dark">100+</span>
+            <span class="text-gray-700">entreprises accompagnées</span>
+          </div>
+          <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+            <span class="text-4xl font-bold text-primary-dark">100%</span>
+            <span class="text-gray-700">présence nationale</span>
           </div>
         </div>
-        <div class="mt-10 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="400">
-          <p>
-            <span class="font-semibold">Fait à Bujumbura</span> &mdash; Depuis 2024, CACOFF SPRL s’engage auprès de ses clients pour une gestion saine et transparente.
-          </p>
-        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="relative py-12 bg-white">
+      <div class="max-w-3xl mx-auto px-4 md:px-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4" data-aos="fade-up">Prêt à avancer avec nous ?</h2>
+        <p class="text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="100">
+          Contactez notre équipe pour bénéficier d’un accompagnement sur mesure et découvrir comment CACOFF SPRL peut contribuer à la réussite de votre entreprise.
+        </p>
+        <a href="/contact.html" class="inline-block px-8 py-3 bg-primary text-white rounded shadow hover:bg-primary-dark transition font-medium" data-aos="zoom-in" data-aos-delay="200">
+          Nous contacter
+        </a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
   <div id="footer" hx-get="components/footer.html" hx-trigger="load"></div>
-
+  <script src="./script.js"></script>
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>

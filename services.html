@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos Services | CACOFF SPRL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#22c55e', light: '#bbf7d0', dark: '#166534' },
+            gray: { 900: '#18181b', 700: '#374151', 100: '#f3f4f6' },
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="text-gray-900 font-sans bg-white">
+  <!-- Header -->
+  <div id="header" hx-get="components/header.html" hx-trigger="load"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-primary-light via-white to-white overflow-hidden">
+      <svg class="absolute -top-10 -left-20 w-72 h-72 opacity-20 z-0" viewBox="0 0 200 200" fill="none">
+        <polygon points="100,10 190,60 160,190 40,190 10,60" fill="#bbf7d0"/>
+      </svg>
+      <svg class="absolute top-10 right-0 w-40 h-40 opacity-10 z-0" viewBox="0 0 100 100" fill="none">
+        <polygon points="50,0 100,25 80,100 20,100 0,25" fill="#4ade80"/>
+      </svg>
+      <div class="relative z-10 max-w-3xl mx-auto px-4 md:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary-dark mb-4" data-aos="fade-down">Nos Services</h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="100">
+          Découvrez l’ensemble de nos expertises pour accompagner la croissance et la conformité de votre entreprise.
+        </p>
+        <a href="#services-list" class="inline-block px-8 py-3 bg-primary text-white rounded shadow hover:bg-primary-dark transition font-medium" data-aos="zoom-in" data-aos-delay="200">
+          Explorer nos services
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services-list" class="relative py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="mb-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-2" data-aos="fade-up">Domaines d’intervention</h2>
+          <p class="text-gray-700 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+            Une offre complète, adaptée à vos besoins et à la réalité du marché burundais.
+          </p>
+        </div>
+        <div class="grid gap-10 md:grid-cols-3">
+          <!-- Service Card 1 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <rect x="8" y="12" width="32" height="28" rx="4" fill="#bbf7d0"/>
+                <rect x="14" y="20" width="20" height="2" fill="#22c55e"/>
+                <rect x="14" y="26" width="12" height="2" fill="#22c55e"/>
+                <rect x="14" y="32" width="16" height="2" fill="#22c55e"/>
+                <rect x="16" y="8" width="4" height="8" rx="2" fill="#22c55e"/>
+                <rect x="28" y="8" width="4" height="8" rx="2" fill="#22c55e"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Déclarations fiscales & sociales</h3>
+            <p class="text-gray-700 mb-4">
+              Gestion complète de vos déclarations trimestrielles et annuelles (OBR, TVA, L.IRE) pour garantir votre conformité et éviter toute pénalité.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <rect x="10" y="18" width="28" height="18" rx="3" fill="#bbf7d0"/>
+                <rect x="18" y="26" width="4" height="10" fill="#22c55e"/>
+                <rect x="26" y="26" width="4" height="10" fill="#22c55e"/>
+                <rect x="14" y="14" width="20" height="6" rx="2" fill="#4ade80"/>
+                <rect x="22" y="10" width="4" height="4" rx="2" fill="#22c55e"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Création d’entreprise</h3>
+            <p class="text-gray-700 mb-4">
+              Accompagnement personnalisé pour la création de sociétés à l’ADB, de la constitution à l’immatriculation, et conseils sur le choix du statut.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <ellipse cx="24" cy="32" rx="16" ry="8" fill="#bbf7d0"/>
+                <path d="M16 28c2 2 6 2 8 0m8 0c-2 2-6 2-8 0" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="20" r="6" fill="#22c55e"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Assistance comptable</h3>
+            <p class="text-gray-700 mb-4">
+              Tenue de comptabilité, établissement des états financiers, conseils personnalisés et accompagnement quotidien.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <circle cx="22" cy="22" r="12" fill="#bbf7d0"/>
+                <circle cx="22" cy="22" r="8" stroke="#22c55e" stroke-width="2"/>
+                <rect x="32" y="32" width="8" height="2" rx="1" transform="rotate(45 32 32)" fill="#22c55e"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Audit</h3>
+            <p class="text-gray-700 mb-4">
+              Audits financiers et organisationnels pour garantir la fiabilité, la transparence et la conformité de vos comptes.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <rect x="10" y="14" width="28" height="20" rx="4" fill="#bbf7d0"/>
+                <path d="M14 18h20M14 24h20M14 30h12" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                <rect x="18" y="10" width="12" height="4" rx="2" fill="#22c55e"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Formation professionnelle</h3>
+            <p class="text-gray-700 mb-4">
+              Formations pratiques en gestion, fiscalité, Excel avancé et outils numériques pour renforcer les compétences de vos équipes.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="group bg-primary-light rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-4">
+              <svg class="w-14 h-14 text-primary" fill="none" viewBox="0 0 48 48">
+                <rect x="12" y="20" width="24" height="14" rx="3" fill="#bbf7d0"/>
+                <polygon points="24,10 34,20 14,20" fill="#22c55e"/>
+                <path d="M24 34v4" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-primary-dark mb-2">Transfert de propriété</h3>
+            <p class="text-gray-700 mb-4">
+              Gestion administrative et fiscale de vos transferts de propriété, en toute sécurité et transparence.
+            </p>
+            <a href="#contact" class="mt-auto inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary-dark transition font-medium">
+              Demander ce service
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="relative py-16 bg-gradient-to-br from-primary-light via-white to-white">
+      <div class="max-w-3xl mx-auto px-4 md:px-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4" data-aos="fade-up">Un besoin spécifique ?</h2>
+        <p class="text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="100">
+          Notre équipe vous accompagne dans tous vos projets de gestion, fiscalité, audit et formation. Contactez-nous pour un devis personnalisé ou une consultation gratuite.
+        </p>
+        <a href="/contact.html" class="inline-block px-8 py-3 bg-primary text-white rounded shadow hover:bg-primary-dark transition font-medium" data-aos="zoom-in" data-aos-delay="200">
+          Nous contacter
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer" hx-get="components/footer.html" hx-trigger="load"></div>
+
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
