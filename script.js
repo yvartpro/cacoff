@@ -150,7 +150,7 @@ document.body.addEventListener('htmx:afterSwap', () => {
         const subject = encodeURIComponent(form.subject.value)
         const message = encodeURIComponent(form.message.value)
 
-        const mailto = `mailto:info@cacoff.bi?subject=${subject} (de ${fullname})&body=${message}%0A%0A${fullname},%0A Je vous remercie.`
+        const mailto = `mailto:cacoffcacoff@gmail.com?subject=${subject} (de ${fullname})&body=${message}%0A%0A${fullname},%0A Je vous remercie.`
         window.location.href = mailto
         form.reset()
       })
